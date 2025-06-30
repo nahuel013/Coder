@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Películas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎬 Catálogo de Películas</h1>
+  <h2>🛒 Carrito de Alquiler</h2>
+<ul id="carrito"></ul>
+<p id="total">Total a pagar: $0</p>
+<button id="vaciar">Vaciar carrito</button>
+<button id="finalizar">Finalizar alquiler</button>
+<!-- Modal Finalizar Alquiler -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="cerrarModal" class="close">&times;</span>
+
+    <div id="form-pago">
+      <h2>Finalizar Alquiler</h2>
+      <p id="modal-total"></p>
+      <label for="metodoPago">Seleccione método de pago:</label>
+      <select id="metodoPago">
+        <option value="">--Seleccione--</option>
+        <option value="Efectivo">Efectivo</option>
+        <option value="Tarjeta">Tarjeta</option>
+        <option value="Transferencia">Transferencia</option>
+      </select>
+      <button id="confirmarPago">Confirmar Pago</button>
+    </div>
+
+    <div id="mensaje-final" style="display: none;">
+      <h2>¡Gracias por tu alquiler! 🎉</h2>
+      <p id="resumen"></p>
+    </div>
+  </div>
+</div>
+
+  <label for="genero">Filtrar por género:</label>
+  <select id="genero">
+    <option value="todos">Todos</option>
+    <option value="Acción">Acción</option>
+    <option value="Comedia">Comedia</option>
+    <option value="Drama">Drama</option>
+    <option value="Animación">Animación</option>
+  </select>
+<br> <br>
+  <div id="catalogo"></div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
