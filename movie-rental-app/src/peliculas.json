@@ -1,0 +1,7 @@
+[
+  { "id": 1, "titulo": "Rápidos y Furiosos", "genero": "Acción", "precio": 500, "imagen": "movie-rental-app/img/ff1.jpg" },
+  { "id": 2, "titulo": "Toy Story", "genero": "Animación", "precio": 400, "imagen": "movie-rental-app/img/ts1.jpg" },
+  { "id": 3, "titulo": "Lalaland", "genero": "Drama", "precio": 450, "imagen": "movie-rental-app/img/ll1.jpg" },
+  { "id": 4, "titulo": "Hangover", "genero": "Comedia", "precio": 350, "imagen": "movie-rental-app/img/ho1.jpg" },
+  { "id": 5, "titulo": "Gladiador", "genero": "Acción", "precio": 550, "imagen": "movie-rental-app/img/g.jpg" }
+]

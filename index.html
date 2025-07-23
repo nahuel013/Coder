@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo de Películas</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler de Películas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>🎬 Catálogo de Películas</h1>
-  <h2>🛒 Carrito de Alquiler</h2>
-<ul id="carrito"></ul>
-<p id="total">Total a pagar: $0</p>
-<button id="vaciar">Vaciar carrito</button>
-<button id="finalizar">Finalizar alquiler</button>
-<!-- Modal Finalizar Alquiler -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span id="cerrarModal" class="close">&times;</span>
-
-    <div id="form-pago">
-      <h2>Finalizar Alquiler</h2>
-      <p id="modal-total"></p>
-      <label for="metodoPago">Seleccione método de pago:</label>
-      <select id="metodoPago">
-        <option value="">--Seleccione--</option>
-        <option value="Efectivo">Efectivo</option>
-        <option value="Tarjeta">Tarjeta</option>
-        <option value="Transferencia">Transferencia</option>
-      </select>
-      <button id="confirmarPago">Confirmar Pago</button>
-    </div>
-
-    <div id="mensaje-final" style="display: none;">
-      <h2>¡Gracias por tu alquiler! 🎉</h2>
-      <p id="resumen"></p>
-    </div>
-  </div>
-</div>
-
-  <label for="genero">Filtrar por género:</label>
-  <select id="genero">
-    <option value="todos">Todos</option>
-    <option value="Acción">Acción</option>
-    <option value="Comedia">Comedia</option>
-    <option value="Drama">Drama</option>
-    <option value="Animación">Animación</option>
-  </select>
-<br> <br>
-  <div id="catalogo"></div>
-
-
-  <script src="script.js"></script>
+    <header class="netflix-header">
+        <div class="header-content">
+            <h1 class="logo">Alquiler de Películas</h1>
+            <div id="auth" class="auth-bar">
+                <input type="text" id="username" placeholder="Usuario">
+                <input type="password" id="password" placeholder="Contraseña">
+                <button id="loginBtn">Login</button>
+                <button id="registerBtn">Crear Usuario</button>
+                <button id="logoutBtn" style="display:none;">Logout</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="catalogo-section">
+            <h2 class="section-title">Películas</h2>
+            <div id="catalogo" class="catalogo-carrusel"></div>
+        </section>
+        <section id="carrito">
+            <h2>Carrito de Alquiler</h2>
+            <ul></ul>
+            <p id="total"></p>
+            <button id="finalizar">Finalizar Alquiler</button>
+            <button id="vaciar">Vaciar Carrito</button>
+        </section>
+        <section id="historial">
+            <h2>Historial de Alquileres</h2>
+            <ul id="historial-lista"></ul>
+        </section>
+        <section id="modal" style="display:none;">
+            <div>
+                <button id="cerrarModal">X</button>
+                <h2>Confirmar Alquiler</h2>
+                <p id="modal-total"></p>
+                <select id="metodoPago">
+                    <option value="">Seleccione un método de pago</option>
+                    <option value="tarjeta">Tarjeta de Crédito</option>
+                    <option value="efectivo">Efectivo</option>
+                </select>
+                <button id="confirmarPago">Confirmar Pago</button>
+                <div id="resumen"></div>
+                <div id="form-pago"></div>
+                <div id="mensaje-final" style="display:none;"></div>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="movie-rental-app/src/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

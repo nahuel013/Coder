@@ -1,0 +1,257 @@
+/* Netflix-like styles */
+body {
+  background: #141414;
+  color: #fff;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.netflix-header {
+  background: #181818;
+  padding: 1.2rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.logo {
+  color: #e50914;
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0;
+}
+.auth-bar {
+  display: flex;
+  gap: 0.5rem;
+}
+.auth-bar input {
+  background: #222;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 0.4rem 0.7rem;
+}
+.auth-bar button {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.auth-bar button:hover {
+  background: #b0060f;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.catalogo-carrusel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #e50914 #222;
+}
+.catalogo-carrusel::-webkit-scrollbar {
+  height: 10px;
+}
+.catalogo-carrusel::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 5px;
+}
+.catalogo-carrusel::-webkit-scrollbar-track {
+  background: #222;
+}
+
+.pelicula {
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 220px;
+  max-width: 240px;
+  width: 220px;
+  margin-bottom: 0;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.pelicula:hover {
+  box-shadow: 0 4px 16px rgba(229,9,20,0.25);
+  transform: scale(1.04);
+}
+.pelicula img.poster {
+  width: 100%;
+  height: 320px;         /* Puedes ajustar este valor según el diseño */
+  max-width: 200px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  object-fit: cover;     /* Esto recorta la imagen para que todas tengan la misma proporción */
+  object-position: center;
+  display: block;
+}
+.pelicula h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #fff;
+}
+.pelicula p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #ccc;
+}
+.pelicula button {
+  margin-top: 0.8rem;
+  width: 100%;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pelicula button:hover {
+  background: #b0060f;
+}
+.disabled-btn {
+  opacity: 0.5;
+  pointer-events: auto;
+  cursor: not-allowed;
+}
+
+#carrito, #historial {
+  background: #181818;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  color: #fff;
+}
+#carrito h2, #historial h2 {
+  color: #e50914;
+  margin-top: 0;
+}
+#carrito button, #historial button {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+#carrito button:hover, #historial button:hover {
+  background: #b0060f;
+}
+#carrito ul, #historial ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+#carrito li, #historial li {
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+#total {
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+#modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+#modal > div {
+  background: #181818;
+  border-radius: 10px;
+  padding: 2rem;
+  min-width: 320px;
+  color: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+  position: relative;
+}
+#cerrarModal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#cerrarModal:hover {
+  background: #b0060f;
+}
+
+@media (max-width: 900px) {
+  .header-content, main {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+  .pelicula {
+    min-width: 160px;
+    max-width: 180px;
+    width: 160px;
+  }
+}
+@media (max-width: 600px) {
+  .header-content, main {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0.2rem;
+  }
+  .catalogo-carrusel {
+    gap: 0.7rem;
+  }
+  .pelicula {
+    min-width: 120px;
+    max-width: 140px;
+    width: 120px;
+    padding: 0.5rem;
+  }
+  #carrito, #historial {
+    padding: 0.7rem;
+  }
+}
